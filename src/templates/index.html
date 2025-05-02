@@ -1,0 +1,468 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QCD</title>
+    <script>
+        // Function to show the error dialog box
+        function showErrorDialog(message) {
+            alert(message);  // You can replace this with a custom modal if needed
+        }
+
+        // Handle error message and set it to "None"
+        document.addEventListener("DOMContentLoaded", function () {
+            const errorElement = document.getElementById("error-message");
+            if (errorElement && errorElement.textContent.trim() !== "") {
+                // Show the error message
+                showErrorDialog(errorElement.textContent.trim());
+
+                // Set the error message to "None"
+                errorElement.textContent = "None";
+            }
+        });
+    </script>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/breast_ribbon.png') }}">
+
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ss/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/gijgo.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slicknav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img" style="margin-left: -90px; margin-bottom: 20px;">
+                                <a href="{{ url_for('index') }}">
+                                    <img  class="img1" src="{{ url_for('static', filename='img/logo1.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-centre">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{{ url_for('index') }}">Home</a></li>
+                                                <li><a href="{{ url_for('model') }}">Model</a></li>
+                                                <li><a href="{{ url_for('index') }}">Languages<i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="{{ url_for('index') }}">English</a></li>
+                                                        <li><a href="{{ url_for('index_hindi') }}">हिंदी</a></li>
+                                                        <li><a href="{{ url_for('index_bengali') }}">বাংলা</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="{{ url_for('about') }}">About us</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">Find Doctors</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="cont">
+            <div class="div1">
+                <!-- Content for the first div goes here -->
+                <div class="slider_area">
+                    <div class="slider_active owl-carousel">
+                        <div class="single_slider  d-flex align-items-center slider_bg_1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="slider_text">
+                                            <span>Welcome to</span>
+                                            <img  class="img2" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+                                            <h3>Unlocking Tomorrow's Cures:<br>Quantum-Powered Cancer Diagnosis</h3>
+                                            <a href="https://youtu.be/5GS2NOJxaFs" class="btn btn-danger">Video Demo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <!-- Content for the second div goes here -->
+                <div class="book_apointment_area" id="detection">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-12">
+                                <div class="popup_box">
+                                    <div class="popup_inner">
+                                        <h3>
+                                            Breast Cancer Detection
+                                        <span>Using histopathological Images</span>
+                                        </h3>
+                                        <h4 style="color:black;">Empowering Health, One Click at a Time</h4>
+                                        <br>
+                                        <form action="/upload" id="upload-file"  method="post" enctype="multipart/form-data">
+                                            <div class="row">
+                                                <div class="col-xl-9">
+                                                    <input type="text" name="name"  placeholder="Your name ">
+                                                </div>
+                                                <div class="col-xl-3">
+                                                    <input type="text" name="age"  placeholder="Your age">
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <input type="text" name="phone"  placeholder="Phone number ">
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <input type="email" name="email"  placeholder="Email Address">
+                                                </div>
+                                                <div class="col-xl-12 form-group">
+                                                    <select class="form-control" id="exampleFormControlSelect1" name="model">
+                                                      <option>Quantum Classical Stack</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-12" class="custom-file">
+                                                    <input type="file" name="file"  id="customFile" multiple>
+                                                </div>
+                                                <div class="col-xl-12" id="submitButtonContainer">
+                                                    <button type="submit" class="boxed-btn3" id="submitBtn" onclick="captureChoice()" style="padding: 12px; font-size: 13px;">Click to proceed</button>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <div class="loading-spinner" id="loadingSpinner"></div>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <a href="https://youtu.be/V4VAc0rfeps" class="btn btn-danger" style="margin-top: 20px;">Watch Demo Video</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    {% if error_message %}
+        <script>
+            showErrorDialog("{{ error_message }}");
+        </script>
+    {% endif %}
+
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            document.getElementById("submitButtonContainer").style.display = "none";
+            // Show the loading spinner
+            document.getElementById("loadingSpinner").style.display = "block";
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function setLoadingState() {
+            $("#response-output").html("Generating Response...");
+            $("#generate-button").hide();
+            $("#regenerate-button").hide();
+        }
+
+        function generateText() {
+            setLoadingState();
+
+            const promptInput = $("#prompt-input").val();
+            $.ajax({
+                type: "POST",
+                url: "/get_response",
+                data: { prompt_input: promptInput },
+                success: function (data) {
+                    $("#response-output").html(data.response);
+                    $("#generate-button").hide();
+                    $("#regenerate-button").show();
+                },
+            });
+        }
+
+        function regenerateText() {
+            setLoadingState();
+
+            $("#prompt-input").val(""); // Clear the input field
+            $("#response-output").empty(); // Clear the response output
+            $("#generate-button").show();
+            $("#regenerate-button").hide();
+        }
+    </script>
+
+    <div class="welcome_clicnic_area">
+        <div id="clinicCarousel" class="carousel slide" data-ride="carousel" data-interval="2000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/2.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>Redefining Breast Cancer Detection: Quantum-Inspired AI Technology</h3>
+                                    <p>Harness the power of quantum-inspired AI for cutting-edge breast cancer detection. Our advanced system seamlessly integrates into lab workflow, delivering unparalleled accuracy in identifying early cancer signs. Designed to simplify and enhance diagnostics, it empowers informed decision-making for superior patient outcomes.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>Transforming Cancer Detection with Advanced Technology</h3>
+                                    <p>Experience the future of breast cancer detection with our AI-powered solution. Tailored for ease of use, it enables technicians to efficiently analyze histopathological images from a vast dataset. Using robust algorithms trained on extensive data, our system identifies potential malignancies with exceptional precision</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/4.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/1.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>Setting New Standards in Breast Cancer Detection</h3>
+                                    <p>Our system utilizes advanced algorithms to analyze images, enabling precise binary classification of medical conditions—whether benign or malignant. This ensures consistent and early detection, revolutionizing diagnostic accuracy. It seamlessly integrates with existing healthcare infrastructure, facilitating smoother workflow and better patient management.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>Empowering Technicians with AI for Early Detection</h3>
+                                    <p>Empower medical lab with AI for proactive breast cancer screening. Our system assists technicians in identifying cancer, enhancing diagnostic accuracy and workflow efficiency. Embrace cutting-edge diagnostic tools with our reliable and user-friendly technology. This integration allows for seamless collaboration between medical professionals, ensuring a comprehensive approach to patient care.</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/3.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <a class="carousel-control-prev custom-control" href="#clinicCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next custom-control" href="#clinicCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <div class="disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <p style="color: #FF6969;">Disclaimer: This website provides information for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Consult with a qualified healthcare provider for any medical concerns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12 justify-content-center">
+                        <p class="copy_right text-center">
+                            <p style="color: white;">Committed to your wellbeing, with ❤️ Team QCD</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elementsToAnimate = document.querySelectorAll('.animated-element');
+
+            elementsToAnimate.forEach(function (element, index) {
+                setTimeout(function () {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 500 * (index + 1));
+            });
+        });
+    </script>
+
+
+
+    <script>
+        function getAnswer() {
+            const questionInput = document.getElementById("question-input").value;
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Replace this with actual code to fetch the answer from your language model.
+            // For simplicity, we'll just echo back the question as the answer in this example.
+            answerOutput.innerHTML = "Answer: " + questionInput;
+
+            // Hide the "Get Answer" button and show the "Regenerate" button
+            getAnswerButton.style.display = "none";
+            regenerateButton.style.display = "inline";
+        }
+
+        function regenerateQuestion() {
+            const questionInput = document.getElementById("question-input");
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Clear the input field and answer output
+            questionInput.value = "";
+            answerOutput.innerHTML = "";
+
+            // Hide the "Regenerate" button and show the "Get Answer" button
+            regenerateButton.style.display = "none";
+            getAnswerButton.style.display = "inline";
+        }
+    </script>
+
+
+
+
+    <script src="{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{ url_for('static', filename='s/isotope.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/ajax-form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/scrollIt.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!--contact js-->
+    <script src="{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    // JavaScript function to capture the selected choice and submit the form
+    function captureChoice() {
+        var selectedChoice = document.getElementById("choices").value;
+        document.getElementById("selected_choice").value = selectedChoice;
+        document.getElementById("upload-file").submit();
+    }
+    </script>
+
+
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){loader.style.display = "none"})
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

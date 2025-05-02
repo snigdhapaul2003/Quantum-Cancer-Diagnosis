@@ -1,0 +1,262 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QCD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/breast_ribbon.png')}}">
+
+
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ss/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/gijgo.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slicknav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+</head>
+
+<body>
+
+    <div id="preloader"></div>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img" style="margin-left: -90px; margin-bottom: 20px;">
+                                <a href="{{ url_for('index') }}">
+                                    <img  class="img1" src="{{ url_for('static', filename='img/logo1.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-centre">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{{ url_for('index') }}">Home</a></li>
+                                                <li><a href="{{ url_for('model') }}">Model</a></li>
+                                                <li><a href="{{ url_for('about') }}">About us</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">Find Doctors</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Predictive Insights</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="container1">
+            <div class="left-div">
+                <h2 class="hd">Patient Details</h2>
+                <p class="prediction-text"><strong>Name :  </strong> {{result.get("name")}}</p>
+                <p class="prediction-text">Age:  {{result.get("age")}}</p>
+                <p class="prediction-text">Phone:  {{result.get("phone")}}</p>
+                <p class="prediction-text">Email-ID:  {{result.get("email")}}</p>
+            </div>
+            <div class="right-divs">
+                <div class="right-div">
+                    <p class="prediction-text1">{{result.get("model")}}</p>
+                </div>
+                <div class="right-div">
+                    <p class="prediction-text1">{{result.get("class")}}</p>
+                </div>
+            </div>
+        </div>
+
+
+    <div class="containerx">
+        <div class="container1">
+                <div class="figure-container">
+                    <figure class="figure">
+                        <img src={{ url_for('static', filename='image.jpeg') }} class="figure-img img-thumbnail input-image">
+                    </figure>
+                </div>
+                <div>
+                    <p class="hd prediction-probabilities-title">Probability:</p>
+                    <table class="styled-table">
+                        <table class="styled-table">
+                              <tr id="head">
+                                  <th>Class</th>
+                                  <th>Probability</th>
+                              </tr>
+                              <tr>
+                                  <td>{{result.get("dis_name")[0]}}</td>
+                                  <td>{{"%.2f" % (result.get("probs")[0] * 100)}}%</td>
+                              </tr>
+                              <tr>
+                                  <td>{{result.get("dis_name")[1]}}</td>
+                                  <td>{{"%.2f" % (result.get("probs")[1] * 100)}}%</td>
+                              </tr>
+                              <tr>
+                                  <td>{{result.get("dis_name")[2]}}</td>
+                                  <td>{{"%.2f" % (result.get("probs")[2] * 100)}}%</td>
+                              </tr>
+                              <tr>
+                                  <td>{{result.get("dis_name")[3]}}</td>
+                                  <td>{{"%.2f" % (result.get("probs")[3] * 100)}}%</td>
+                              </tr>
+                          </table>
+                    </table>
+                </div>
+            </div>
+
+            <div class="llm1"></div>
+            <div class="llm1"></div>
+            <div class="llm1"></div>
+
+            <div class="button-container">
+                <a href="{{ url_for('generate_pdf') }}" download="downloaded_file.pdf" class="button download-button" id="gen-button">Generate Report</a>
+                <div id="spinner" class="spinner"></div>
+                <a href="{{ url_for('database') }}" class="button upload-button" id="upload-button" onclick="uploadToDatabase()">Upload to Database</a>
+                <div id="spinner1" class="spinner"></div>
+            </div>
+
+            <div class="button-container" id="shw">
+                <h2>Updated to database</h2>
+            </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $('#gen-button').click(function() {
+                        // Show the spinner
+                        $('#gen-button').hide();
+                        $('#spinner').show();
+
+                        // Simulate a delay (replace this with your actual PDF generation code)
+                        setTimeout(function() {
+                            // Hide the spinner when the report is generated (replace with your logic)
+                            $('#spinner').hide();
+                            $('#gen-button').show();
+                        }, 4000); // Adjust the delay as needed
+                    });
+                });
+            </script>
+
+            <script>
+                $(document).ready(function() {
+                    $('#upload-button').click(function() {
+                        // Show the spinner
+                        $('#upload-button').hide();
+                        $('#spinner1').show();
+
+                        // Simulate a delay (replace this with your actual PDF generation code)
+                        setTimeout(function() {
+                            // Hide the spinner when the report is generated (replace with your logic)
+                            $('#spinner1').hide();
+                            $('#upload-button').show();
+                            $('#shw').show();
+                        }, 9000); // Adjust the delay as needed
+                    });
+                });
+            </script>
+        
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function setLoadingState() {
+                $("#response-output").html("Generating Response...");
+                $("#generate-button").hide();
+                $("#regenerate-button").hide();
+            }
+
+            function generateText() {
+                setLoadingState();
+
+                const promptInput = $("#prompt-input").val();
+                $.ajax({
+                    type: "POST",
+                    url: "/get_response",
+                    data: { prompt_input: promptInput },
+                    success: function (data) {
+                        $("#response-output").html(data.response);
+                        $("#generate-button").hide();
+                        $("#regenerate-button").show();
+                    },
+                });
+            }
+
+            function regenerateText() {
+                setLoadingState();
+
+                $("#prompt-input").val(""); // Clear the input field
+                $("#response-output").empty(); // Clear the response output
+                $("#generate-button").show();
+                $("#regenerate-button").hide();
+            }
+        </script>
+        <script src="{ url_for('static', filename='js/jquery.form.js') }}"></script>
+
+    </div>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){loader.style.display = "none"})
+    </script>
+
+    <div class="disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <p style="color: #FF6969;">Disclaimer: This website provides information for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Consult with a qualified healthcare provider for any medical concerns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12 justify-content-center">
+                        <p class="copy_right text-center">
+                            <p style="color: white;">Committed to your wellbeing, with ❤️ Team QCD</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+</footer>
+
+</html>

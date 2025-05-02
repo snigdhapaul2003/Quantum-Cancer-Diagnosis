@@ -1,0 +1,434 @@
+﻿<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QCD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/breast_ribbon.png')}}">
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ss/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/gijgo.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slicknav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img" style="margin-left: -90px; margin-bottom: 20px;">
+                                <a href="{{ url_for('index') }}">
+                                    <img  class="img1" src="{{ url_for('static', filename='img/logo1.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-centre">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{{ url_for('index_bengali') }}">হোম</a></li>
+                                                <li><a href="{{ url_for('model_bengali') }}">মডেল</a></li>
+                                                <li><a href="{{ url_for('index_bengali') }}">ভাষা<i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="{{ url_for('index') }}">English</a></li>
+                                                        <li><a href="{{ url_for('index_hindi') }}">हिंदी</a></li>
+                                                        <li><a href="{{ url_for('index_bengali') }}">বাংলা</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="{{ url_for('about_bengali') }}">আমাদের সম্পর্কে</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">ডাক্তার খুঁজুন</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="cont">
+            <div class="div1">
+                <!-- Content for the first div goes here -->
+                <div class="slider_area">
+                    <div class="slider_active owl-carousel">
+                        <div class="single_slider  d-flex align-items-center slider_bg_1">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="slider_text">
+                                            <span>স্বাগতম</span>
+                                            <img  class="img2" src="{{ url_for('static', filename='img/logo.png') }}" alt="">
+                                            <h3>ভবিষ্যতের নিরাময়:<br>কোয়ান্টাম-অনুপ্রেরিত ক্যান্সার নির্ণয়</h3>
+                                            <a href="https://youtu.be/5GS2NOJxaFs" class="btn btn-danger">ভিডিও ডেমো</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div2">
+                <!-- Content for the second div goes here -->
+                <div class="book_apointment_area" id="detection">
+                    <div class="container">
+                        <div class="row justify-content-end">
+                            <div class="col-lg-12">
+                                <div class="popup_box">
+                                    <div class="popup_inner">
+                                        <h3>
+                                            স্তন ক্যান্সার সনাক্তকরণ
+                                        <span>হিস্টোপ্যাথলজিকাল ইমেজ ব্যবহার করে</span>
+                                        </h3>
+                                        <h4 style="color:black;">এক ক্লিকে,স্বাস্থ্যের ক্ষমতায়ন</h4>
+                                        <br>
+                                        <form action="/upload_beng" id="upload-file"  method="post" enctype="multipart/form-data">
+                                            <div class="row">
+                                                <div class="col-xl-9">
+                                                    <input type="text" name="name"  placeholder="আপনার নাম ">
+                                                </div>
+                                                <div class="col-xl-3">
+                                                    <input type="text" name="age"  placeholder="আপনার বয়স">
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <input type="text" name="phone"  placeholder="ফোন নম্বর ">
+                                                </div>
+                                                <div class="col-xl-6">
+                                                    <input type="email" name="email"  placeholder="ইমেল">
+                                                </div>
+                                                <div class="col-xl-12 form-group">
+                                                    <select class="form-control" id="exampleFormControlSelect1" name="model">
+                                                      <option>Quantum Classical Stack</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xl-12" class="custom-file">
+                                                    <input type="file" name="file"  id="customFile" multiple>
+                                                </div>
+                                                <div class="col-xl-12" id="submitButtonContainer">
+                                                    <button type="submit" class="boxed-btn3" id="submitBtn" onclick="captureChoice()" style="padding: 12px; font-size: 13px;">এগিয়ে যেতে ক্লিক করুন</button>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <div class="loading-spinner" id="loadingSpinner"></div>
+                                                </div>
+                                                <div class="col-xl-12">
+                                                    <a href="https://youtu.be/V4VAc0rfeps" class="btn btn-danger" style="margin-top: 20px;">ডেমো ভিডিও দেখুন</a>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script>
+        document.getElementById("submitBtn").addEventListener("click", function(event) {
+            document.getElementById("submitButtonContainer").style.display = "none";
+            // Show the loading spinner
+            document.getElementById("loadingSpinner").style.display = "block";
+        });
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function setLoadingState() {
+            $("#response-output").html("Generating Response...");
+            $("#generate-button").hide();
+            $("#regenerate-button").hide();
+        }
+
+        function generateText() {
+            setLoadingState();
+
+            const promptInput = $("#prompt-input").val();
+            $.ajax({
+                type: "POST",
+                url: "/get_response",
+                data: { prompt_input: promptInput },
+                success: function (data) {
+                    $("#response-output").html(data.response);
+                    $("#generate-button").hide();
+                    $("#regenerate-button").show();
+                },
+            });
+        }
+
+        function regenerateText() {
+            setLoadingState();
+
+            $("#prompt-input").val(""); // Clear the input field
+            $("#response-output").empty(); // Clear the response output
+            $("#generate-button").show();
+            $("#regenerate-button").hide();
+        }
+    </script>
+
+    <div class="welcome_clicnic_area">
+        <div id="clinicCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/2.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>স্তন ক্যান্সার সনাক্তকরণ পুনরায় সংজ্ঞায়িত করা: কোয়ান্টাম-অনুপ্রাণিত এআই প্রযুক্তি</h3>
+                                    <p>অত্যাধুনিক স্তন ক্যান্সার সনাক্তকরণের জন্য কোয়ান্টাম-অনুপ্রাণিত AI-এর শক্তি ব্যবহার করুন। আমাদের উন্নত সিস্টেম নির্বিঘ্নে ল্যাব ওয়ার্কফ্লোতে একীভূত হয়, ক্যান্সারের প্রাথমিক লক্ষণ সনাক্ত করার ক্ষেত্রে অতুলনীয় নির্ভুলতা প্রদান করে। ডায়াগনস্টিকস সহজীকরণ এবং উন্নত করার জন্য ডিজাইন করা হয়েছে, এটি উচ্চতর রোগীর ফলাফলের জন্য জ্ঞাত সিদ্ধান্ত গ্রহণের ক্ষমতা দেয়।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>উন্নত প্রযুক্তির সাহায্যে ক্যান্সার সনাক্তকরণকে রূপান্তর করা</h3>
+                                    <p>আমাদের AI-চালিত সমাধানের মাধ্যমে স্তন ক্যান্সার শনাক্তকরণের ভবিষ্যত অভিজ্ঞতা নিন। ব্যবহারের সুবিধার জন্য তৈরি করা হয়েছে, এটি প্রযুক্তিবিদদের একটি বিশাল ডেটাসেট থেকে হিস্টোপ্যাথোলজিকাল চিত্রগুলি দক্ষতার সাথে বিশ্লেষণ করতে সক্ষম করে। বিস্তৃত ডেটার উপর প্রশিক্ষিত শক্তিশালী অ্যালগরিদম ব্যবহার করে, আমাদের সিস্টেম ব্যতিক্রমী নির্ভুলতার সাথে সম্ভাব্য ক্ষতিকারকতা সনাক্ত করে</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/4.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/1.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>স্তন ক্যান্সার সনাক্তকরণে নতুন মান নির্ধারণ করা</h3>
+                                    <p>আমাদের সিস্টেম চিত্র বিশ্লেষণ করতে উন্নত অ্যালগরিদম ব্যবহার করে, চিকিৎসার অবস্থার সুনির্দিষ্ট বাইনারি শ্রেণীবিভাগ সক্ষম করে - তা সৌম্য বা ম্যালিগন্যান্ট। এটি সুসংগত এবং প্রাথমিক সনাক্তকরণ নিশ্চিত করে, ডায়াগনস্টিক নির্ভুলতায় বিপ্লব ঘটায়। এটি বিদ্যমান স্বাস্থ্যসেবা পরিকাঠামোর সাথে নির্বিঘ্নে একীভূত করে, মসৃণ কর্মপ্রবাহ এবং রোগীর উন্নত ব্যবস্থাপনার সুবিধা দেয়।</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="con">
+                        <div class="row align-items-center">
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_docmed_info">
+                                    <h3>প্রারম্ভিক সনাক্তকরণের জন্য AI দিয়ে প্রযুক্তিবিদদের ক্ষমতায়ন করা</h3>
+                                    <p>সক্রিয় স্তন ক্যান্সার স্ক্রীনিংয়ের জন্য AI সহ মেডিকেল ল্যাবকে শক্তিশালী করুন। আমাদের সিস্টেম ক্যান্সার শনাক্ত করতে, ডায়গনিস্টিক নির্ভুলতা এবং কর্মপ্রবাহের দক্ষতা বাড়াতে প্রযুক্তিবিদদের সহায়তা করে। আমাদের নির্ভরযোগ্য এবং ব্যবহারকারী-বান্ধব প্রযুক্তির সাথে অত্যাধুনিক ডায়গনিস্টিক সরঞ্জামগুলিকে আলিঙ্গন করুন। এই ইন্টিগ্রেশন চিকিৎসা পেশাদারদের মধ্যে নিরবচ্ছিন্ন সহযোগিতার জন্য অনুমতি দেয়, রোগীর যত্নের জন্য একটি ব্যাপক পদ্ধতির নিশ্চিত করে।</p>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6">
+                                <div class="welcome_thumb">
+                                    <div class="thumb_1">
+                                        <img src="{{ url_for('static', filename='img/about/3.jpg') }}" alt="Breast Cancer Detection">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev custom-control" href="#clinicCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next custom-control" href="#clinicCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+
+
+    <div class="disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <p style="color: #FF6969;">দাবিত্যাগ: এই ওয়েবসাইট শুধুমাত্র শিক্ষাগত এবং তথ্যগত উদ্দেশ্যে তথ্য প্রদান করে। এটি পেশাদার চিকিৎসা পরামর্শ, রোগ নির্ণয় বা চিকিত্সার বিকল্প নয়। যেকোনো চিকিৎসা সংক্রান্ত উদ্বেগের জন্য একজন যোগ্য স্বাস্থ্যসেবা প্রদানকারীর সাথে পরামর্শ করুন।</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12 justify-content-center">
+                        <p class="copy_right text-center">
+                            <p style="color: white;">আপনার সুস্থতার জন্য প্রতিশ্রুতিবদ্ধ,❤️ Team QCD</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const elementsToAnimate = document.querySelectorAll('.animated-element');
+
+            elementsToAnimate.forEach(function (element, index) {
+                setTimeout(function () {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, 500 * (index + 1));
+            });
+        });
+    </script>
+
+
+
+    <script>
+        function getAnswer() {
+            const questionInput = document.getElementById("question-input").value;
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Replace this with actual code to fetch the answer from your language model.
+            // For simplicity, we'll just echo back the question as the answer in this example.
+            answerOutput.innerHTML = "Answer: " + questionInput;
+
+            // Hide the "Get Answer" button and show the "Regenerate" button
+            getAnswerButton.style.display = "none";
+            regenerateButton.style.display = "inline";
+        }
+
+        function regenerateQuestion() {
+            const questionInput = document.getElementById("question-input");
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Clear the input field and answer output
+            questionInput.value = "";
+            answerOutput.innerHTML = "";
+
+            // Hide the "Regenerate" button and show the "Get Answer" button
+            regenerateButton.style.display = "none";
+            getAnswerButton.style.display = "inline";
+        }
+    </script>
+
+
+
+
+    <script src="{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{ url_for('static', filename='s/isotope.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/ajax-form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/scrollIt.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!--contact js-->
+    <script src="{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    // JavaScript function to capture the selected choice and submit the form
+    function captureChoice() {
+        var selectedChoice = document.getElementById("choices").value;
+        document.getElementById("selected_choice").value = selectedChoice;
+        document.getElementById("upload-file").submit();
+    }
+    </script>
+
+
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){loader.style.display = "none"})
+    </script>
+</body>
+
+</html>

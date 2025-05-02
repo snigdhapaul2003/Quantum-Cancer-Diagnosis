@@ -1,0 +1,371 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QCD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/breast_ribbon.png')}}">
+
+
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ss/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/gijgo.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slicknav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+     <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img" style="margin-left: -90px; margin-bottom: 20px;">
+                                <a href="{{ url_for('index') }}">
+                                    <img  class="img1" src="{{ url_for('static', filename='img/logo1.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-centre">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{{ url_for('index') }}">Home</a></li>
+                                                <li><a href="{{ url_for('model') }}">Model</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">Languages<i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="{{ url_for('Book_Appointment') }}">English</a></li>
+                                                        <li><a href="{{ url_for('Book_Appointment') }}">हिंदी</a></li>
+                                                        <li><a href="{{ url_for('Book_Appointment') }}">বাংলা</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="{{ url_for('about') }}">About us</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">Find Doctors</a></li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="bradcam_area breadcam_bg d-flex align-items-center justify-content-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <div class="bradcam_text">
+                        <h3>Welcome to our Doctor Recommendation System</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<div class="appointment-section">
+    <!-- Doctor Appointment Booking Form -->
+    <div class="appointment-area" id="appointment">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="form-container shadow-lg p-4 rounded">
+                        <div class="form-header text-center mb-4">
+                            <h1 class="text-danger">Choose your Preferred Doctor</h1>
+                        </div>
+                        <div class="form-body">
+                            <form action="/submit_appointment" id="appointment-form" method="post">
+                                <div class="row">
+                                    <!-- Personal Information -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="name" class="form-label">Full Name</label>
+                                        <input type="text" name="name" id="name" class="form-control border-danger" placeholder="Enter your full name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="age" class="form-label">Age</label>
+                                        <input type="number" name="age" id="age" class="form-control border-danger" placeholder="Enter your age" min="0" required>
+                                    </div>
+                                    <!-- Contact Information -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" name="phone" id="phone" class="form-control border-danger" placeholder="10-digit phone number" pattern="[0-9]{10}" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" name="email" id="email" class="form-control border-danger" placeholder="Enter your email address" required>
+                                    </div>
+                                    <!-- Appointment Details -->
+                                    <div class="col-md-6 mb-3">
+                                        <label for="time_slot" class="form-label">Preferred Time Slot</label>
+                                        <input type="text" name="time_slot" id="time_slot" class="form-control border-danger" placeholder="e.g., 10:00 - 13:00" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="appointment-date" class="form-label">Preferred Date</label>
+                                        <input type="date" name="appointment_date" id="appointment-date" class="form-control border-danger" required>
+                                    </div>
+                                    <!-- Address Details -->
+                                    <div class="col-md-12 mb-3">
+                                        <label for="preferred_location" class="form-label">Preferred Location</label>
+                                        <input type="text" name="preferred_location" id="preferred_location" class="form-control border-danger" placeholder="Enter your preferred location" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="city" class="form-label">City</label>
+                                        <input type="text" name="city" id="city" class="form-control border-danger" placeholder="City name" required>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label for="pincode" class="form-label">Postal Code</label>
+                                        <input type="text" name="pincode" id="pincode" class="form-control border-danger" placeholder="Postal code" required>
+                                    </div>
+                                    <!-- Submit Button -->
+                                    <div class="col-md-12 text-center">
+                                        <button type="submit" class="btn btn-danger btn-md w-50 mt-5" style="font-size: 1.5rem;">
+                                            Choose Doctor
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <div class="doctor-table mt-4" style="padding-left: 200px; padding-right: 200px; padding-top: 50px; padding-bottom: 20px;">
+
+    <table class="table table-bordered table-striped mt-3">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Doctor Name</th>
+                <th scope="col">Specialization</th>
+                <th scope="col">Address</th>
+                <th scope="col">Visit</th>
+                <th scope="col">Days</th>
+                <th scope="col">Start time</th>
+                <th scope="col">End time</th>
+                <th scope="col">Contact Number</th>
+            </tr>
+        </thead>
+        <tbody id="doctor-table-body">
+            {% if doctors %}
+                {% for doctor in doctors %}
+                    <tr>
+                        <td>{{ doctor.name }}</td>
+                        <td>{{ doctor.specialization }}</td>
+                        <td>{{ doctor.address }}</td>
+                        <td>{{ doctor.fees }}</td>
+                        <td>{{ doctor.date }}</td>
+                        <td>{{ doctor.start_time }}</td>
+                        <td>{{ doctor.end_time }}</td>
+                        <td>{{ doctor.telephone }}</td>
+                    </tr>
+                {% endfor %}
+            {% else %}
+                <tr>
+                    <td colspan="8" class="text-center">Fillup the form to get doctor recommendation</td>
+                </tr>
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Button to Load More Doctors -->
+<div class="text-center mt-3">
+    <button id="load-more-button" class="btn btn-danger">Load More Doctors</button>
+</div>
+
+<script>
+    document.getElementById('load-more-button').addEventListener('click', function () {
+        // Fetch extra doctors from the server
+        fetch('/get_extra_doctors')
+            .then(response => response.json())
+            .then(data => {
+                const tableBody = document.getElementById('doctor-table-body');
+
+                // Add each doctor to the table
+                data.forEach(doctor => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${doctor.name}</td>
+                        <td>${doctor.specialization}</td>
+                        <td>${doctor.address}</td>
+                        <td>${doctor.fees}</td>
+                        <td>${doctor.date}</td>
+                        <td>${doctor.start_time}</td>
+                        <td>${doctor.end_time}</td>
+                        <td>${doctor.telephone}</td>
+                    `;
+                    tableBody.appendChild(row);
+                });
+
+                // Disable the button to prevent loading again
+                document.getElementById('load-more-button').disabled = true;
+            })
+            .catch(error => {
+                console.error('Error fetching extra doctors:', error);
+                alert('Failed to load extra doctors. Please try again later.');
+            });
+    });
+</script>
+
+
+<div class="form-footer text-center mt-4">
+    <p class="text-muted small">
+        <strong>Note:</strong> Appointments are subject to availability. Confirmation will be sent to your provided email.
+    </p>
+</div>
+
+
+
+
+
+    <div class="disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <p style="color: #FF6969; font-size: 12px;">Disclaimer: This website provides information for educational and informational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment. Consult with a qualified healthcare provider for any medical concerns.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12 justify-content-center">
+                        <p class="copy_right text-center">
+                            <p style="color: white;">Committed to your wellbeing, with ❤️ Team QCD</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        function getAnswer() {
+            const questionInput = document.getElementById("question-input").value;
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Replace this with actual code to fetch the answer from your language model.
+            // For simplicity, we'll just echo back the question as the answer in this example.
+            answerOutput.innerHTML = "Answer: " + questionInput;
+
+            // Hide the "Get Answer" button and show the "Regenerate" button
+            getAnswerButton.style.display = "none";
+            regenerateButton.style.display = "inline";
+        }
+
+        function regenerateQuestion() {
+            const questionInput = document.getElementById("question-input");
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Clear the input field and answer output
+            questionInput.value = "";
+            answerOutput.innerHTML = "";
+
+            // Hide the "Regenerate" button and show the "Get Answer" button
+            regenerateButton.style.display = "none";
+            getAnswerButton.style.display = "inline";
+        }
+    </script>
+
+
+
+
+    <script src="{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{ url_for('static', filename='s/isotope.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/ajax-form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/scrollIt.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!--contact js-->
+    <script src="{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    // JavaScript function to capture the selected choice and submit the form
+    function captureChoice() {
+        var selectedChoice = document.getElementById("choices").value;
+        document.getElementById("selected_choice").value = selectedChoice;
+        document.getElementById("upload-file").submit();
+    }
+    </script>
+
+
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){loader.style.display = "none"})
+    </script>
+</body>
+
+</html>

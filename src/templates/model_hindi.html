@@ -1,0 +1,378 @@
+﻿<!doctype html>
+<html class="no-js" lang="hi">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>QCD</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='img/breast_ribbon.png')}}">
+
+
+
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/magnific-popup.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='ss/font-awesome.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/themify-icons.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/nice-select.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/flaticon.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/gijgo.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/animate.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/slicknav.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-xl-3 col-lg-3">
+                            <div class="logo-img" style="margin-left: -90px; margin-bottom: 20px;">
+                                <a href="{{ url_for('index') }}">
+                                    <img  class="img1" src="{{ url_for('static', filename='img/logo1.png') }}" alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-9 col-lg-9">
+                            <div class="menu_wrap d-none d-lg-block">
+                                <div class="menu_wrap_inner d-flex align-items-center justify-content-centre">
+                                    <div class="main-menu">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li><a href="{{ url_for('index_hindi') }}">होम</a></li>
+                                                <li><a href="{{ url_for('model_hindi') }}">मडेल</a></li>
+                                                <li><a href="{{ url_for('model_hindi') }}">भाषा<i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><a href="{{ url_for('model') }}">English</a></li>
+                                                        <li><a href="{{ url_for('model_hindi') }}">हिंदी</a></li>
+                                                        <li><a href="{{ url_for('model_bengali') }}">বাংলা</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li><a href="{{ url_for('about_hindi') }}">हमारे बारे में</a></li>
+                                                <li><a href="{{ url_for('Book_Appointment') }}">डॉक्टर ढूंढें</a></li>
+
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>मॉडल विवरण</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="welcome_clicnic_area" style="text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-12 col-lg-12" style = "padding-left:100px; padding-right:120px;">
+                    <div class="welcome_docmed_info">
+                        <h3>डेटासेट</h3>
+                        <p style="text-align: justify;">हमारे विश्लेषण में उपयोग किए गए ब्रेकहिज़ डेटासेट में 400X आवर्धन पर कैप्चर किए गए स्तन ट्यूमर माइक्रोग्राफ शामिल हैं और इसमें कुल 7,909 एनोटेट छवियां शामिल हैं। इसे दो मुख्य वर्गों में वर्गीकृत किया गया है: सौम्य और घातक। मैलिग्नेंट वर्ग में इनवेसिव डक्टल कार्सिनोमा शामिल है।घातक वर्ग में इनवेसिव डक्टल कार्सिनोमा (आईडीसी), लोब्यूलर कार्सिनोमा (आईएलसी), म्यूसिनस कार्सिनोमा और ट्यूबलर कार्सिनोमा शामिल हैं। सौम्य वर्ग में एडेनोमा, फाइब्रोएडीनोमा, फाइलोड्स ट्यूमर और ट्यूबलर एडेनोमा जैसे ट्यूमर शामिल हैं।</p>
+                        <ul>
+                            <li> <i class="flaticon-verified"></i> डेटासेट में कुल 7,909 एनोटेटेड छवियां शामिल हैं।</li>
+                            <li> <i class="flaticon-verified"></i> इसमें 400X आवर्धन पर कैप्चर की गई विभिन्न प्रकार की छवियां शामिल हैं।</li>
+                        </ul>
+                        <p>Dataset Link: </p>
+                        <a href="https://web.inf.ufpr.br/vri/databases/breast-cancer-histopathological-database-breakhis/" style="color: crimson;">https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/DBW86T</a>
+                        <div style="height: 15px;"></div>
+                        <p style="text-align: justify;">यह डेटासेट मशीन लर्निंग मॉडल के विकास के लिए एक व्यापक आधार प्रदान करता है जिसका उद्देश्य हिस्टोपैथोलॉजिकल छवियों में स्तन कैंसर का सटीक वर्गीकरण और पता लगाना है। </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>फ़ीचर एक्सट्रैक्शन, क्रॉस स्पेस फ्यूजन
+                        <p style="text-align: justify;">हमने छवि सुविधाओं को निकालने के लिए DenseNet121 का उपयोग किया है, जो चार घने ब्लॉकों और संक्रमण परतों में व्यवस्थित 121 परतों वाला एक सघन रूप से जुड़ा हुआ नेटवर्क है। अतिरिक्त रंग जानकारी प्राप्त करने के लिए मान, संतृप्ति और रंग के लिए विशिष्ट फ़ार्मुलों का उपयोग करके छवियों को आरजीबी से एचएसवी रंग स्थान में परिवर्तित किया जाता है। RGB और HSV दोनों संस्करणों को DenseNet121 द्वारा संसाधित किया जाता है, जो 300x1000 फीचर वैक्टर का उत्पादन करता है जिन्हें फिर एक एकीकृत प्रतिनिधित्व में औसत किया जाता है।</p>
+                        <ul>
+                            <li> <i class="flaticon-verified"></i> 121 परतों और सघन कनेक्टिविटी के साथ DenseNet121 आर्किटेक्चर। </li>
+                            <li> <i class="flaticon-verified"></i>DenseNet121 का उपयोग करके RGB और HSV दोनों छवियों से 300x1000 सुविधा वेक्टर निष्कर्षण। </li>
+                        </ul>
+                        <p style="text-align: justify;">यह दोहरे चैनल दृष्टिकोण RGB और HSV दोनों रंग स्थानों का लाभ उठाता है, जो DenseNet121 के माध्यम से संसाधित होते हैं, पूरक रंगीन जानकारी प्राप्त करने के लिए, HSV रंग विविधताओं के प्रति बढ़ी हुई संवेदनशीलता के लिए रंग, संतृप्ति और मूल्य को अलग करता है। परिणामी फ़ीचर वैक्टर का औसत एक अधिक मजबूत छवि प्रतिनिधित्व बनाता है, संभावित रूप से बाद के विश्लेषणात्मक कार्यों में प्रदर्शन में सुधार करता है।</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/RGB.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6"style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>प्रिंसिपल कंपोनेंट एनालिसिस
+                            <span>(पीसीए) </span></h3>
+                        <p style="text-align: justify;">कस्टम वर्गीकरण को सक्षम करने के लिए, प्रिंसिपल कंपोनेंट एनालिसिस (पीसीए) ने फीचर वेक्टर आयामीता को 300x1000 से घटाकर 300x10 कर दिया, सबसे महत्वपूर्ण भिन्नता को बरकरार रखा और क्यूएसवीसी जैसे क्वांटम क्लासिफायर के क्वबिट बाधाओं के साथ संगत एक कॉम्पैक्ट प्रतिनिधित्व तैयार किया। यह आयामीता में कमी क्वांटम राज्यों में डेटा की कुशल मैपिंग के लिए आवश्यक है और शास्त्रीय (एसवीसी) और क्वांटम (क्यूएसवीसी) दोनों तरीकों का उपयोग करके बाद के वर्गीकरण की अनुमति देती है।</p>
+                        <p style="text-align: justify;">कस्टम हार्डवेयर के साथ संगतता, कम कम्प्यूटेशनल ओवरहेड, मुख्य जानकारी की अवधारण, और शोर में कमी। बाद के शास्त्रीय (एसवीसी) और क्वांटम (क्यूएसवीसी) वर्गीकरण के लिए 300x10 फीचर मैट्रिक्स।</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/PCA.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/SVC.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_docmed_info">
+                        <h3>सपोर्ट वेक्टर क्लासिफायर
+                            (SVC)</h3>
+                        <p style="text-align: justify;">सपोर्ट वेक्टर क्लासिफायर (एसवीसी) गैर-वियोज्य को संभालने के लिए स्लैक वेरिएबल्स (ζᵢ) का उपयोग करके, समीकरण wᵀx + b = 0 में वजन वेक्टर (डब्ल्यू) और पूर्वाग्रह शब्द (बी) को अनुकूलित करके विभिन्न वर्गों में डेटा बिंदुओं को अलग करने के लिए एक हाइपरप्लेन बनाते हैं। मार्जिन अधिकतमकरण और त्रुटि न्यूनीकरण को संतुलित करने के लिए डेटा और एक नियमितीकरण पैरामीटर (सी)।</p>
+                        <p style="text-align: justify;">इसके लिए अनुकूलित, कम फीचर वेक्टर आयाम (300x10) के कारण एक रैखिक कर्नेल को चुना गया, जो एक रैखिक निर्णय सीमा के साथ एक कुशल समाधान प्रदान करता है। यह SVC एप्लिकेशन डेटा को वर्गीकृत करने, बाद के मेटा-क्लासिफायर और YOLO मॉडल प्रोसेसिंग के लिए आधार बनाने के लिए DenseNet121 से निकाली गई सुविधाओं का प्रभावी ढंग से उपयोग करता है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>क्वांटम सपोर्ट वेक्टर क्लासिफायर
+                            <span>(QSVC)</span></h3>
+                        <p style="text-align: justify;">क्वांटम सपोर्ट वेक्टर क्लासिफायर (क्यूएसवीसी) डेटा को उच्च-आयामी हिल्बर्ट स्पेस में मैप करने के लिए क्वांटम यांत्रिकी का उपयोग करते हैं, जो शास्त्रीय एसवीसी की तुलना में गैर-रेखीय रूप से अलग करने योग्य डेटा की बेहतर हैंडलिंग की पेशकश करते हैं। क्यूएसवीसी इस स्थान में कुशल प्रक्षेपण के लिए क्वांटम कर्नेल का उपयोग करता है, विशेष रूप से जटिल डेटासेट के साथ बेहतर प्रदर्शन के लिए तेजी से बड़े डेटा प्रतिनिधित्व का लाभ उठाता है।</p>
+                        <p style="text-align: justify;">यह कार्यान्वयन उच्च-आयामी वर्गीकरण कार्यों के लिए जटिल सुविधा सहसंबंधों को कैप्चर करने, क्वांटम राज्यों में शास्त्रीय डेटा को प्रभावी ढंग से एन्कोड करने के लिए दो सर्किट दोहराव और रैखिक क्वबिट उलझाव के साथ ZZFeatureMap का उपयोग करता है।</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/QSVM.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/STACK.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_docmed_info">
+                        <h3>क्वांटम-शास्त्रीय स्टैक पहनावा</h3>
+                        <p style="text-align: justify;">क्वांटम-क्लासिकल स्टैक पहनावा वर्गीकरण प्रदर्शन को बढ़ाने के लिए शास्त्रीय (एसवीसी) और क्वांटम (क्यूएसवीसी) मॉडल की भविष्यवाणियों को जोड़ता है। प्रशिक्षण के बाद, एसवीसी और क्यूएसवीसी भविष्यवाणियों को एक नया मेटा-फीचर सेट बनाने के लिए मूल फीचर सेट (एक्स) के साथ जोड़ा जाता है।</p>
+                        <p style="text-align: justify;">इस संवर्धित डेटासेट का उपयोग मेटा-क्लासिफायर, आमतौर पर एक लॉजिस्टिक रिग्रेशन मॉडल को प्रशिक्षित करने के लिए किया जाता है, जो दोनों मॉडलों से जानकारी को बेहतर ढंग से एकीकृत करना सीखता है। यह दृष्टिकोण बेहतर अंतिम भविष्यवाणियों के लिए शास्त्रीय दक्षता और क्वांटम उच्च-आयामीता की पूरक शक्तियों का लाभ उठाता है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="welcome_clicnic_area" style="padding-top:0px">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>कस्टम प्रशिक्षित
+                            <span>YOLOv8.</span></h3>
+                        <p style="text-align: justify;">हमने अपनी वेबसाइट पर त्वचा रोग की पहचान के लिए YOLOv8 वर्गीकरण मॉडल, PyTorch ढांचे पर आधारित एक गहन शिक्षण वास्तुकला को एकीकृत किया है। यह विकल्प त्वचा संबंधी छवियों को वर्गीकृत करने में मॉडल की असाधारण सटीकता से प्रेरित है, जो इसे त्वचा रोगों से जुड़े जटिल पैटर्न की पहचान करने के लिए उपयुक्त बनाता है।</p>
+                        <ul>
+                            <li> <i class="flaticon-verified"></i>मॉडल ८०.६५% की टॉप-१ सटीकता प्राप्त करता है।</li>
+                            <li> <i class="flaticon-verified"></i>हमारा मॉडल ९७.२% की शीर्ष-५ सटीकता दर प्रदर्शित करता है।</li>
+                        </ul>
+                        <p style="text-align: justify;">अपनी वेबसाइट पर YOLOv8 वर्गीकरण मॉडल को नियोजित करके, हम शीर्ष-१ और शीर् -५ सटीकता मेट्रिक्स दोनों के साथ मजबूत त्वचा रोग की पहचान सुनिश्चित करते हैं, अंततः हमारी नैदानिक ​​​​सेवाओं की सटीकता और विश्वसनीयता में सुधार करते हैं।</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/yolo.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 text-center">
+                    <p style="color: #FF6969;">अस्वीकरण: यह वेबसाइट केवल शिक्षा. और सूचनात्मक उद्देश्यों के लिए जानकारी प्रदान करती है|यह पेशेवर चिकित्सा सलाह, निदान या उपचार का विकल्प नहीं है।किसी भी चिकित्सीय चिंता के लिए योग्य स्वास्थ्य सेवा प्रदाता से परामर्श लें।</p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer">
+        <div class="copy-right_text">
+            <div class="container">
+                <div class="row">
+                    <div class="bordered_1px "></div>
+                    <div class="col-xl-12 justify-content-center">
+                        <p class="copy_right text-center">
+                            <p style="color: white;">अपने कल्याण के प्रति प्रतिबद्ध रहें,❤️ Team QCD</p>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script>
+        function getAnswer() {
+            const questionInput = document.getElementById("question-input").value;
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Replace this with actual code to fetch the answer from your language model.
+            // For simplicity, we'll just echo back the question as the answer in this example.
+            answerOutput.innerHTML = "Answer: " + questionInput;
+
+            // Hide the "Get Answer" button and show the "Regenerate" button
+            getAnswerButton.style.display = "none";
+            regenerateButton.style.display = "inline";
+        }
+
+        function regenerateQuestion() {
+            const questionInput = document.getElementById("question-input");
+            const answerOutput = document.getElementById("answer-output");
+            const getAnswerButton = document.getElementById("get-answer-button");
+            const regenerateButton = document.getElementById("regenerate-button");
+
+            // Clear the input field and answer output
+            questionInput.value = "";
+            answerOutput.innerHTML = "";
+
+            // Hide the "Regenerate" button and show the "Get Answer" button
+            regenerateButton.style.display = "none";
+            getAnswerButton.style.display = "inline";
+        }
+    </script>
+
+
+
+
+    <script src="{ url_for('static', filename='js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/vendor/jquery-1.12.4.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/popper.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+    <script src="{ url_for('static', filename='s/isotope.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/ajax-form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/waypoints.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.counterup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/imagesloaded.pkgd.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/scrollIt.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.scrollUp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/wow.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/nice-select.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.magnific-popup.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/plugins.js') }}"></script>
+    <script src="{ url_for('static', filename='js/gijgo.min.js') }}"></script>
+    <!--contact js-->
+    <script src="{ url_for('static', filename='js/contact.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.form.js') }}"></script>
+    <script src="{ url_for('static', filename='js/jquery.validate.min.js') }}"></script>
+    <script src="{ url_for('static', filename='js/mail-script.js') }}"></script>
+    <script src="{ url_for('static', filename='js/main.js') }}"></script>
+
+    <script>
+    // JavaScript function to capture the selected choice and submit the form
+    function captureChoice() {
+        var selectedChoice = document.getElementById("choices").value;
+        document.getElementById("selected_choice").value = selectedChoice;
+        document.getElementById("upload-file").submit();
+    }
+    </script>
+
+
+    <script>
+        $('.datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-calendar"></span>'
+            }
+        });
+
+        $('.timepicker').timepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-clock-o"></span>'
+            }
+        });
+    $(document).ready(function() {
+    $('.js-example-basic-multiple').select2();
+});
+    </script>
+    <script>
+        var loader = document.getElementById("preloader");
+        window.addEventListener("load",function(){loader.style.display = "none"})
+    </script>
+</body>
+
+</html>
