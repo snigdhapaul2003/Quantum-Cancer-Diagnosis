@@ -80,7 +80,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>Model Details</h3>
+                        <h3>Architectural Level Research</h3>
                     </div>
                 </div>
             </div>
@@ -247,7 +247,63 @@
         </div>
     </div>
 
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>Implementation Level Research</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+     <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/NSGA-II.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_docmed_info">
+                        <h3>Doctor Recommendation Algorithm Design</h3>
+                        <p style="text-align: justify;">Our Doctor Recommendation Algorithm operates in two main stages: initial filtering and multi-objective optimization. First, it identifies geographically close doctors using the Haversine formula for distance calculation and then performs temporal matching to ensure their availability aligns with the user's preferred time. This ensures that only relevant and available doctors proceed to the next stage.</p>
+                        <p style="text-align: justify;"> The second stage involves Multi-Objective Optimization using the Pareto Front. Instead of simply ranking, the system employs the NSGA-II algorithm to consider conflicting objectives like minimizing distance, maximizing doctor rating, and maximizing years of experience. This approach provides a set of Pareto-optimal solutions, allowing users to make informed trade-offs based on their specific priorities rather than being presented with a single, potentially sub-optimal, choice.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>Agentic Chatbot Design</h3>
+                        <p style="text-align: justify;">Our medical chatbot uses an Agentic Flow Design, orchestrating LLMs and specialized tools for complex medical tasks. It dynamically routes user input by first inferring the task type (tool-based, general LLM, or blocked), ensuring precise and efficient responses.</p>
+                        <ul>
+                            <li> <i class="flaticon-verified"></i> The agent then directs the query: general questions go to the LLaMA3-70B-Versatile model, while tool calls (like doctor recommendations or report generation) access specific databases. </li>
+                            <li> <i class="flaticon-verified"></i> This design blends LLM strengths with domain-specific tools, creating a robust healthcare framework that prioritizes safety, relevance, and precision. </li>
+                        </ul>
+                        <p style="text-align: justify;">Ultimately, this architecture establishes the agent as a central reasoning hub, allowing the system to not only answer medical queries effectively but also to uphold clear boundaries, which is crucial for ensuring the safety, relevance, and precision of all interactions.</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/Agentic.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="disclaimer">
         <div class="container">

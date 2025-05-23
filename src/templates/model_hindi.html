@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-xl-12">
                     <div class="bradcam_text">
-                        <h3>मॉडल विवरण</h3>
+                        <h3>वास्तुशिल्प स्तर अनुसंधान</h3>
                     </div>
                 </div>
             </div>
@@ -242,6 +242,64 @@
                     <div class="welcome_thumb">
                         <div class="thumb_1">
                             <img src="{{ url_for('static', filename='img/banner/yolo.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="bradcam_text">
+                        <h3>कार्यान्वयन स्तर अनुसंधान </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/NSGA-II.jpg') }}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_docmed_info">
+                        <h3>डॉक्टर अनुशंसा एल्गोरिथ्म डिजाइन</h3>
+                        <p style="text-align: justify;">हमारा डॉक्टर अनुशंसा एल्गोरिथ्म दो मुख्य चरणों में काम करता है: प्रारंभिक फ़िल्टरिंग और बहु-उद्देश्य अनुकूलन। सबसे पहले, यह दूरी की गणना के लिए हैवरसाइन सूत्र का उपयोग करके भौगोलिक रूप से नज़दीकी डॉक्टरों की पहचान करता है और फिर यह सुनिश्चित करने के लिए अस्थायी मिलान करता है कि उनकी उपलब्धता उपयोगकर्ता के पसंदीदा समय के साथ संरेखित हो। यह सुनिश्चित करता है कि केवल प्रासंगिक और उपलब्ध डॉक्टर ही अगले चरण पर आगे बढ़ें।</p>
+                        <p style="text-align: justify;"> दूसरे चरण में पेरेटो फ्रंट का उपयोग करके बहु-उद्देश्यीय अनुकूलन शामिल है। केवल रैंकिंग के बजाय, सिस्टम NSGA-II एल्गोरिदम का उपयोग करता है ताकि दूरी को कम करने, डॉक्टर की रेटिंग को अधिकतम करने और अनुभव के वर्षों को अधिकतम करने जैसे परस्पर विरोधी उद्देश्यों पर विचार किया जा सके। यह दृष्टिकोण पेरेटो-इष्टतम समाधानों का एक सेट प्रदान करता है, जिससे उपयोगकर्ताओं को एकल, संभावित रूप से उप-इष्टतम, विकल्प के साथ प्रस्तुत किए जाने के बजाय उनकी विशिष्ट प्राथमिकताओं के आधार पर सूचित व्यापार-बंद करने की अनुमति मिलती है।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="welcome_clicnic_area" style="padding-top:0px; text-align: justify;">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <div class="col-xl-6 col-lg-6" style = "padding-left:100px; padding-right:50px;">
+                    <div class="welcome_docmed_info">
+                        <h3>एजेंटिक चैटबॉट डिज़ाइन</h3>
+                        <p style="text-align: justify;">हमारा मेडिकल चैटबॉट एक एजेंटिक फ्लो डिज़ाइन का उपयोग करता है, जटिल चिकित्सा कार्यों के लिए एलएलएम और विशेष उपकरणों को ऑर्केस्ट्रेट करता है। यह पहले कार्य प्रकार (टूल-आधारित, सामान्य एलएलएम, या अवरुद्ध) का अनुमान लगाकर उपयोगकर्ता इनपुट को गतिशील रूप से रूट करता है, जिससे सटीक और कुशल प्रतिक्रियाएँ सुनिश्चित होती हैं।</p>
+                        <ul>
+                            <li> <i class="flaticon-verified"></i> इसके बाद एजेंट क्वेरी को निर्देशित करता है: सामान्य प्रश्न LLaMA3-70B-वर्सेटाइल मॉडल पर जाते हैं, जबकि टूल कॉल (जैसे डॉक्टर की सिफारिशें या रिपोर्ट तैयार करना) विशिष्ट डेटाबेस तक पहुंचते हैं। </li>
+                            <li> <i class="flaticon-verified"></i> यह डिजाइन एलएलएम की ताकत को डोमेन-विशिष्ट उपकरणों के साथ मिश्रित करता है, जिससे एक मजबूत स्वास्थ्य देखभाल ढांचा तैयार होता है जो सुरक्षा, प्रासंगिकता और परिशुद्धता को प्राथमिकता देता है।</li>
+                        </ul>
+                        <p style="text-align: justify;">अंततः, यह वास्तुकला एजेंट को एक केंद्रीय तर्क केंद्र के रूप में स्थापित करती है, जिससे सिस्टम न केवल चिकित्सा प्रश्नों का प्रभावी ढंग से उत्तर दे पाता है, बल्कि स्पष्ट सीमाओं को भी बनाए रख पाता है, जो सभी अंतःक्रियाओं की सुरक्षा, प्रासंगिकता और सटीकता सुनिश्चित करने के लिए महत्वपूर्ण है।</p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6" style = "padding-left:50px; padding-right:100px;">
+                    <div class="welcome_thumb">
+                        <div class="thumb_1">
+                            <img src="{{ url_for('static', filename='img/banner/Agentic.jpg') }}" alt="">
                         </div>
                     </div>
                 </div>
