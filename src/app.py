@@ -396,13 +396,12 @@ def check_with_genai():
 
 def inference(model, name, age, phone, email, uploaded_file):
 
-    is_true = check_with_genai()
+    # uploaded_file.save('static/image.jpeg')
+
 
     img = uploaded_file.read()
     img = PILImage.open(BytesIO(img))
 
-    if is_true == False:
-        return {"error": "The uploaded image is not a valid breast cancer histopathological image."}, None
 
     # Convert image to numpy array
     img_data = np.array(img)
@@ -410,6 +409,11 @@ def inference(model, name, age, phone, email, uploaded_file):
     pil_img = PILImage.fromarray(img_data)
 
     pil_img.save(f'static/image.jpeg', format="JPEG")
+
+    is_true = check_with_genai()
+
+    if is_true == False:
+        return {"error": "The uploaded image is not a valid breast cancer histopathological image."}, None
 
     # Convert to HSV
     hsv_img = cv2.cvtColor(img_data, cv2.COLOR_RGB2HSV)
@@ -818,7 +822,7 @@ def whatsapp_reply():
         system_instructions = (
             "You are a knowledgeable medical assistant. You have access to the following patient's medical report (on breast cancer):\n\n"
             f"{report}\n\n"
-            "Provide accurate and reliable answers to queries related to medical topics, medications, possible diets or the provided report. Explain medical terms, medicines, or general medical knowledge when asked. However, do not suggest or recommend any specific medications, dosages, or treatments. If someone asks for a specific medication recommendation, politely inform them to consult a doctor. Ensure every response is unique and clear. Decline to answer any questions that are unrelated to the medical field or some vague questions, encouraging the user to focus on health-related queries instead. Answer in short. Write like a professional whatsapp chat. But every whatsapp chat phrasing will be different. Use emoji. Use tool call if asked by the user. If required information is incomplete to do the tool_call, ask the user for details. In case of tool call type of doctor is mandatory, ask user to choose between oncologist(if the report is malignant) and gynecologist(if the report is benign). You can only recommend doctors, but you can't book a consultation directly. If someone tells yoou to book appointment with a doctor, tell him/her to contact directly through phone number provided, don't repeat the list of doctors. If any error is generated anytime, write it politely, not in technical language. When told something other than doctor recommendation don't do tool call strictly. If anytime the tool call fails for any missing or incorrect data, ask the users for it again, don't be quiet."
+            "Give answer in the language in which the user asks to the query. If the user ask in bengali or hindi, please answer in that written language. Otherwise always maintain english language. Provide accurate and reliable answers to queries related to medical topics, medications, possible diets or the provided report. Explain medical terms, medicines, or general medical knowledge when asked. However, do not suggest or recommend any specific medications, dosages, or treatments. If someone asks for a specific medication recommendation, politely inform them to consult a doctor. Ensure every response is unique and clear. Decline to answer any questions that are unrelated to the medical field or some vague questions, encouraging the user to focus on health-related queries instead. Answer in short. Write like a professional whatsapp chat. But every whatsapp chat phrasing will be different. Use emoji. Use tool call if asked by the user. If required information is incomplete to do the tool_call, ask the user for details. In case of tool call type of doctor is mandatory, ask user to choose between oncologist(if the report is malignant) and gynecologist(if the report is benign). You can only recommend doctors, but you can't book a consultation directly. If someone tells yoou to book appointment with a doctor, tell him/her to contact directly through phone number provided, don't repeat the list of doctors. If any error is generated anytime, write it politely, not in technical language. When told something other than doctor recommendation don't do tool call strictly. If anytime the tool call fails for any missing or incorrect data, ask the users for it again, don't be quiet."
         )
         prompt = f"{system_instructions}\n\nPrevious context: {context}\n\nCurrent User Message: {incoming_msg}\nBot:"
 
