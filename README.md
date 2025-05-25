@@ -1,6 +1,6 @@
 # Quantum Cancer Diagnosis (QCD)
 
-![QCD Logo](static/img/logo.png)
+![QCD Logo](src/static/img/logo.png)
 
 ## Unlocking Tomorrow's Cures: Quantum-Powered Cancer Diagnosis
 
