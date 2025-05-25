@@ -192,11 +192,6 @@ QCD includes features for medical professionals:
   - Rating
   - Availability
 
-## Demo Videos
-
-- [System Overview](https://youtu.be/5GS2NOJxaFs)
-- [Using the Detection System](https://youtu.be/V4VAc0rfeps)
-
 ## Contributing
 
 We welcome contributions to enhance QCD's capabilities:
